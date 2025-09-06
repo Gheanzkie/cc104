@@ -1,0 +1,60 @@
+<?php
+
+include_once('dbconnection.php');
+
+if(isset($_POST['submit'])) {
+
+    $fullname = $_POST['fullname'];
+    $course = $_POST['course'];
+    $year_level = $_POST['year_level'];
+    $section = $_POST['section'];
+
+    $query = "INSERT INTO `management` (fullname, course, year_level, section) 
+    VALUES ('$fullname', '$course', '$year_level', '$section')" ;
+
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+        echo "<script>alert('Student Successfully Registered!')</script>";
+    }
+    else 
+        echo "<script>alert('There was an Error!')</script>";
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>CREATE</title>
+</head>
+<body>
+    <div class="bg-dark d-flex justify-content-center align-items-center w-100 vh-100">
+        <div class="bg-white w-25 h-30 rounded p-4" >
+            <h2>REGISTER</h2>
+            <form method="POST">
+                <div class="mb-2">
+                     <input type="text" class="form-control" name="fullname" placeholder="Enter your full Name"></input>
+                </div>
+                <div class="mb-2">
+                     <input type="text" class="form-control" name="course" placeholder="Enter your Course"></input>
+                </div>
+                <div class="mb-2">
+                     <input type="text" class="form-control" name="year_level" placeholder="Enter your Year Level"></input>
+                </div>
+                <div class="mb-2">
+                     <input type="text" class="form-control" name="section" placeholder="Enter your Section"></input>
+                </div>
+               <button class="btn btn-success" type="submit" name="submit">Submit</button>
+            
+            </form>
+
+        </div>
+    </div>
+    
+</body>
+</html>
