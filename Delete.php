@@ -24,7 +24,8 @@
 <?php
 include_once ('dbconnection.php');
             if (isset($_POST['delete'])) {
-                $id = $_GET['id'];
+                $id =
+                 $_GET['id'];
                 $delete = "DELETE FROM `management` WHERE id='$id'";
 
                 if (mysqli_query($conn, $delete)) {

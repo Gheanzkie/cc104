@@ -41,6 +41,7 @@
                 </div>
                 
                 <button class="btn btn-success" type="submit" name="submit">Update</button>
+                <a href="Read.php" class="btn btn-danger" type="submit" >Cancel</button>
             </div>
             </form>
 
